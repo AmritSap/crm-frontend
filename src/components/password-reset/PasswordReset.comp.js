@@ -2,12 +2,12 @@ import React,{useState} from 'react'
 import PropTypes from 'prop-types'
 import {Container,Row,Col,Form,Button} from 'react-bootstrap'
 
-export const LoginForm = ({ handleOnChange, email, pass, handleOnSubmit }) => {
+export const ResetPassword = ({ handleOnChange, email,  handleOnSubmit }) => {
   return (
     <Container>
       <Row>
         <Col>
-          <h1 className="text-info text-center">Client login</h1>
+          <h1 className="text-info text-center">Reset Password</h1>
           <hr></hr>
           <Form autoComplete="off" onSubmit={handleOnSubmit}>
             <Form.Group>
@@ -21,24 +21,14 @@ export const LoginForm = ({ handleOnChange, email, pass, handleOnSubmit }) => {
                 required
               />
             </Form.Group>
-            <Form.Group>
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                name="password"
-                value={pass}
-                onChange={handleOnChange}
-                placeholder="Enter password"
-                required
-              />
-            </Form.Group>
+          
             <Button type="submit">Login</Button>
           </Form>
           <hr />
         </Col>
       </Row>
       <Col>
-        <a href="#">Forgot Password?</a>
+        <a href="#">Loging Now</a>
       </Col>
       <Row></Row>
     </Container>
