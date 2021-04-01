@@ -31,24 +31,39 @@ export const Entry = () => {
     // Todod call api to submit the form
     console.log(email, password);
   };
+  const handleOnResetSubmit = (e) => {
+    e.preventDefault();
+    if (!email) {
+      return alert("please enter email");
+    }
+    // Todod call api to submit the form
+    console.log(email, password);
+  };
+  const formSwitcher = frmType =>{
+    setFrmLoad(frmType);
+  }
   
   return (
     <div className="entry-page bg-info">
       <Jumbotron className="form-box">
-         {frmLoad ==="login" &&( 
-        <LoginForm
-          handleOnChange={handleOnChange}
-          handleOnSubmit={handleOnSubmit}
-          email={email}
-          pass={password}
-        />)}
-        {frmLoad === 'reset' &&(
-        <ResetPassword
-          handleOnChange={handleOnChange}
-          handleOnSubmit={handleOnSubmit}
-          email={email}
-          pass={password}
-        />)}
+        {frmLoad === "login" && (
+          <LoginForm
+            handleOnChange={handleOnChange}
+            handleOnSubmit={handleOnSubmit}
+            email={email}
+            pass={password}
+            formSwitcher={formSwitcher}
+          />
+        )}
+        {frmLoad === "reset" && (
+          <ResetPassword
+            handleOnChange={handleOnChange}
+            handleOnResetSubmit={handleOnResetSubmit}
+            email={email}
+            pass={password}
+            formSwitcher={formSwitcher}
+          />
+        )}
       </Jumbotron>
     </div>
   );

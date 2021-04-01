@@ -2,7 +2,13 @@ import React,{useState} from 'react'
 import PropTypes from 'prop-types'
 import {Container,Row,Col,Form,Button} from 'react-bootstrap'
 
-export const LoginForm = ({ handleOnChange, email, pass, handleOnSubmit }) => {
+export const LoginForm = ({
+  handleOnChange,
+  email,
+  pass,
+  handleOnSubmit,
+  formSwitcher,
+}) => {
   return (
     <Container>
       <Row>
@@ -38,7 +44,9 @@ export const LoginForm = ({ handleOnChange, email, pass, handleOnSubmit }) => {
         </Col>
       </Row>
       <Col>
-        <a href="#">Forgot Password?</a>
+        <a href="#" onClick={ () => formSwitcher('reset')}>
+          Forgot Password?
+        </a>
       </Col>
       <Row></Row>
     </Container>
