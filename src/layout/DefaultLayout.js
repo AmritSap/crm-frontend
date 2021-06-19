@@ -11,6 +11,6 @@ export const DefaultLayout = ({ children }) => {
       <footer className="footer">
         <Footer />
       </footer>
-    </div>
+    </div> 
   );
 };
